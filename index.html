@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.15/tailwind.min.css" integrity="sha512-braXHF1tCeb8MzPktmUHhrjZBSZknHvjmkUdkAbeqtIrWwCchhcpUeAf2Sq3yIq1Q1x5PlroafjceOUbIE3Q5g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="css/styles.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/alpinejs/3.0.1/cdn.js" integrity="sha512-YhYjtZBtO9hFoskhm5298pa/xqjnvHMj7fvcG2t/ZUKO8glI2Wwor9dllCWWI/5A4yO4aME6TJonBRpbhK1mQQ==" crossorigin="anonymous" referrerpolicy="no-referrer" async></script>
+  <script src="js/nav.js" async></script> </script>
+  <title>Portfolio Alexandre Scalisi</title>
+</head>
+<body>
+  <aside class="bg-blue-900 h-screen fixed w-80">
+    <div class="flex justify-between p-4">
+      <img src="https://upload.wikimedia.org/wikipedia/fr/thumb/4/43/Logo_Olympique_de_Marseille.svg/1200px-Logo_Olympique_de_Marseille.svg.png" alt="img" class="w-20 h-20 rounded-full">
+      <div class="text-right">
+        <h3 class="text-gray-200 text-2xl font-semibold">Alexandre Scalisi</h3>
+        <p class="text-gray-500">Etudiant dev web</p>
+        <p class="text-gray-500">Recherche alternance</p>
+      </div>
+    </div>
+    <nav class="my-12">
+      <ul x-data="nav()">
+        <template x-for="d in data" :key=d.text>
+          <li :class="{'text-gray-300 bg-gray-500' : d.active }"class="flex justify-between content-center cursor-pointer p-4 text-gray-200 hover:text-gray-600 hover:bg-gray-200" @click="active(d.text) ">
+            <img :src="d.img" :alt="d.text" class="w-8 h-8">
+            <p x-text="d.text" class="text-xl"></p>
+          </li>
+        </template>
+      </ul>
+    </nav>
+  </aside>
+  <main class="ml-80 p-4">
+    abc
+  </main>
+</body>
+</html>
