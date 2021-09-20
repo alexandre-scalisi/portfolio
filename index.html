@@ -7,7 +7,8 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.15/tailwind.min.css" integrity="sha512-braXHF1tCeb8MzPktmUHhrjZBSZknHvjmkUdkAbeqtIrWwCchhcpUeAf2Sq3yIq1Q1x5PlroafjceOUbIE3Q5g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
   <link rel="stylesheet" href="css/styles.css">
   <script src="https://cdnjs.cloudflare.com/ajax/libs/alpinejs/3.0.1/cdn.js" integrity="sha512-YhYjtZBtO9hFoskhm5298pa/xqjnvHMj7fvcG2t/ZUKO8glI2Wwor9dllCWWI/5A4yO4aME6TJonBRpbhK1mQQ==" crossorigin="anonymous" referrerpolicy="no-referrer" async></script>
-  <script src="js/nav.js" async></script> </script>
+  <script src="js/nav.js" async></script>
+  <script src="js/skills.js" async></script>
   <title>Portfolio Alexandre Scalisi</title>
 </head>
 <body>
@@ -23,7 +24,7 @@
     <nav class="my-12">
       <ul x-data="nav()">
         <template x-for="d in data" :key=d.text>
-          <li :class="{'text-gray-300 bg-gray-500' : d.active }"class="flex justify-between content-center cursor-pointer p-4 text-gray-200 hover:text-gray-600 hover:bg-gray-200" @click="active(d.text) ">
+          <li :class="{'text-gray-300 bg-gray-500' : d.active }"class="flex justify-between content-center cursor-pointer p-4 text-gray-200 hover:text-gray-600 hover:bg-gray-200" @click="active(d.text); test(d.id)">
             <img :src="d.img" :alt="d.text" class="w-8 h-8">
             <p x-text="d.text" class="text-xl"></p>
           </li>
@@ -31,8 +32,55 @@
       </ul>
     </nav>
   </aside>
-  <main class="ml-80 p-4">
-    abc
+  <main class="ml-80">
+    <section id="presentation" class="h-screen bg-gray-800 p-4 flex flex-col justify-center content-center">
+      <h1 class="text-white text-center">Bonjour j'me présente, je m'appelle Henri
+J'voudrais bien réussir ma vie, être aimé </h1>
+    </section>
+    <section id="competences" class="bg-gray-200 py-12 px-4 text-center">
+      <h2 class="text-6xl inline-block text-center mb-24">Mes Compétences</h2>
+      <div class="grid grid-cols-3 w-full" x-data="skills()">
+        <div class="border-r-2 border-blue-200 p-4">
+          <h3 class="text-center mb-8 text-3xl pb-2 border-b border-blue-700 inline-block">Langages informatiques</h3>
+          <template x-for="language in languages" :key="language" class="block">
+            <div class="inline-block px-6 py-4">
+              <img :src=`./img/skills/${language}.png` :alt="language" class="h-20 mb-2">
+              <p x-text="language" class="text-center"></p>
+            </div>
+          </template>
+        </div>
+        <div class="border-r-2 border-blue-200 p-4 text-center">
+          <h3 class="text-center mb-8 text-3xl pb-2 border-b border-blue-700 inline-block">Frameworks / Libraries</h3>
+            <template x-for="fl in frameworksOrLibraries" :key="fl" class="block">
+              abc
+            <div class="inline-block px-6 py-4">
+              <img :src=`./img/frameworks_libraries/${fl}.png` :alt="fl" class="h-20">
+              <p x-text="fl" class="text-center"></p>
+            </div>
+          </template>
+        </div>
+        <div class="p-4 text-center">
+          <h3 class="text-center mb-8 text-3xl pb-2 border-b border-blue-700 inline-block">Outils</h3>
+            <template x-for="tool in tools" :key="tool" class="block">
+              abc
+            <div class="inline-block px-6 py-4">
+              <img :src=`./img/tools/${tool}.png` :alt="tool" class="h-20">
+              <p x-text="tool" class="text-center"></p>
+            </div>
+          </template>
+        </div>
+      </div>
+    </section>
+    <section id="projets" class="h-screen bg-gray-800 p-4">
+      projets
+    </section>
+    <section id="formations" class="h-screen bg-gray-200 p-4">
+      formations
+    </section>
+    <section id="contact" class="h-screen bg-gray-800 p-4">
+      contact
+    </section>
+    
   </main>
 </body>
 </html>
