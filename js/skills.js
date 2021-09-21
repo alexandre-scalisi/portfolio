@@ -27,7 +27,8 @@ const skills = () => {
       'Visual Studio Code',
       'GitHub',
       'NPM',
-      'Webpack'
+      'Webpack',
+      'PHP My Admin'
     ]
   }
 }
