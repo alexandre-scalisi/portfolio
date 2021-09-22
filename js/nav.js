@@ -3,33 +3,27 @@ const nav = () => {
     data: [
       {
         text: "Présentation",
-        img: "https://upload.wikimedia.org/wikipedia/fr/thumb/4/43/Logo_Olympique_de_Marseille.svg/1200px-Logo_Olympique_de_Marseille.svg.png",
+        img: "../img/icons/user-icon.png",
         active: true,
         id: "presentation",
       },
       {
         text: "Compétences",
-        img: "https://upload.wikimedia.org/wikipedia/fr/thumb/4/43/Logo_Olympique_de_Marseille.svg/1200px-Logo_Olympique_de_Marseille.svg.png",
+        img: "../img/icons/skills-icon.png",
         active: false,
         id: "competences",
       },
       {
         text: "Projets",
-        img: "https://upload.wikimedia.org/wikipedia/fr/thumb/4/43/Logo_Olympique_de_Marseille.svg/1200px-Logo_Olympique_de_Marseille.svg.png",
+        img: "../img/icons/projects-icon.png",
         active: false,
         id: "projets",
       },
       {
         text: "Formations",
-        img: "https://upload.wikimedia.org/wikipedia/fr/thumb/4/43/Logo_Olympique_de_Marseille.svg/1200px-Logo_Olympique_de_Marseille.svg.png",
+        img: "../img/icons/formations-icon.png",
         active: false,
-        id: "formations"
-      },
-      {
-        text: "Contact",
-        img: "https://upload.wikimedia.org/wikipedia/fr/thumb/4/43/Logo_Olympique_de_Marseille.svg/1200px-Logo_Olympique_de_Marseille.svg.png",
-        active: false,
-        id: "contact",
+        id: "formations",
       },
     ],
     active(name) {
@@ -42,7 +36,7 @@ const nav = () => {
       const targetOffset = document.getElementById(id).offsetTop;
       console.log(document.getElementById(id));
       window.scrollTo({ top: targetOffset, behavior: "smooth" });
-    }
+    },
   };
 
 };
